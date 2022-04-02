@@ -2,117 +2,124 @@
 
 <html lang="pt-br">
 
-  <head>
-    <title>JO-KEN-PO</title>
-    <meta charset="utf-8">
-    <style type="text/css">
-            .container {
-                width: 100vw;
-                height: 100vh;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-            }
-            #tela_de_titulo{
-                width: 40vw;
-                height: 6vw;
-                flex: 1;
-                background-color: azure; 
-                margin: 0 auto ;
-                margin-top: 10px;
-            }
-            h3{
-                color: black;
-                font-family: VCR OSD Mono;
-                text-align: center;
-                font-size: 24px;
-            }
-            #braza1{
-                background-color: ;
-                width: 6vw;
-                height: 6vw;
-            }
-            .pedra{
-                font-family: arial;
-                font-size: 15px;
-                padding: 10px 20px 10px 20px;
-                text-transform: uppercase;
-                font-weight: 700px
-                cursor: pointer; 
-  
-            }
-            .papel{
-                font-family: arial;
-		font-color: blue:
-                font-size: 15px;
-                padding: 10px 20px 10px 20px;
-                text-transform: uppercase;
-                font-weight: 700px
-                cursor: pointer;    
-             }
-            .tesoura{
-                font-family: arial;
-                font-size: 23px;
-                padding: 10px 20px 10px 20px;
-                text-transform: uppercase;
-                font-weight: 700px
-                cursor: pointer; 
-            }
-            #centralizar{
-                position:absolute; 
-                top:94%;
-                left: 38%;
-            }
-            #center_titulo{
-                position:absolute; 
-                top:3%;
-                left: 41%;   
-            }
-            body{
-	    color: black;
-            background-color: #2a4e85
-            }
-    </style>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<head>
+  <title>JO-KEN-PO</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
 
-  </head>
+    #tela_de_titulo {
+      width: 40vw;
+      height: 6vw;
+      flex: 1;
+      background-color: rgb(8, 17, 60);
+      margin: 0 auto;
+      margin-top: 10px;
+    }
 
-  <body>
+    h3 {
+      color: red;
+      font-family: VCR OSD Mono;
+      text-align: center;
+      font-size: 100px;
+    }
 
-    <input type="checkbox" id="check">
-    <label for="check">
-      <img src="menu.png">
-    </label>
-     <nav>
-        <ul> 
-            <li><a href="">HOME</a></li>
-            <li><a href="REGRAS.txt">REGRAS</a></li>
-        </ul>
+    #braza1 {
+      background-color: ;
+      width: 6vw;
+      height: 6vw;
+    }
 
-     </nav>
-     <div id="tela_de_titulo" style=center_titulo>
-          <h3>JO-KEN-PO</h3>
-    </div>
+    .pedra {
+      font-family: arial;
+      font-size: 15px;
+      padding: 10px 20px 10px 20px;
+      text-transform: uppercase;
+      font-weight: 700px cursor: pointer;
+    }
 
-    <div class="container">           
+    .papel {
+      background-image: url('paper.png');
+      background-size: contain;
+      width: 128px;
+      height: 128px;
+    }
+
+    .tesoura {
+      font-family: arial;
+      font-size: 23px;
+      padding: 10px 20px 10px 20px;
+      text-transform: uppercase;
+      font-weight: 700px cursor: pointer;
+    }
+
+    #centralizar {
+      position: absolute;
+      top: 94%;
+      left: 38%;
+    }
+
+    #center_titulo {
+      position: absolute;
+      top: 3%;
+      left: 41%;
+    }
+
+    body {
+      color: black;
+      background-color: #2a4e85
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+  <input type="checkbox" id="check">
+  <label for="check">
+    <img src="">
+  </label>
+  <nav>
+    <ul>
+      <li><a href="">HOME</a></li>
+      <li><a href="REGRAS.txt">REGRAS</a></li>
+    </ul>
+
+  </nav>
+  <div id="tela_de_titulo" style=center_titulo>
+    <h3>JO-KEN-PO</h3>
+  </div>
+  <div class="container">
+    <h3>
       <div id="Seleção">
-      </div> 
+      </div>
       <div id="botao_pedra">
         <button title="pedra" id="pedra" style=pedra>pedra</button>
       </div>
-      <div id="botao_papel">
-        <button title="papel" id="papel">papel</button>
-      </div>
-      <div id="botao_tesoura">
+      <a>
+        <div id="botao_papel">
+          <button title="papel" id="papel" class="papel"></button>
+        </div>
+      </a>
+      <div id="botao_tesoura style=tesoura">
         <button title="tesoura" id="tesoura">tesoura</button>
       </div>
-      </div>
-    </div>
+  </div>
+  </h3>
+  </div>
 
-    <script>
+
+  <script>
       //alert('JO-KEN-PO')
-    </script>
-  </body>
+  </script>
+</body>
 
 </html>
