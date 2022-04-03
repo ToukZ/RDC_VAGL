@@ -6,6 +6,19 @@
   <title>JO-KEN-PO</title>
   <meta charset="utf-8">
   <style type="text/css">
+    .container2 {
+      width: 40vw;
+      height: 20vh;
+      background-color: black;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 34%;
+      left: 30%;
+    }
+
     .container {
       width: 100vw;
       height: 100vh;
@@ -13,6 +26,7 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      top: 1%;
     }
 
     #tela_de_titulo {
@@ -38,11 +52,10 @@
     }
 
     .pedra {
-      font-family: arial;
-      font-size: 15px;
-      padding: 10px 20px 10px 20px;
-      text-transform: uppercase;
-      font-weight: 700px cursor: pointer;
+      background-image: url('rock.png');
+      background-size: contain;
+      width: 128px;
+      height: 128px;
     }
 
     .papel {
@@ -53,11 +66,10 @@
     }
 
     .tesoura {
-      font-family: arial;
-      font-size: 23px;
-      padding: 10px 20px 10px 20px;
-      text-transform: uppercase;
-      font-weight: 700px cursor: pointer;
+      background-image: url('tesoura.png');
+      background-size: contain;
+      width: 128px;
+      height: 128px;
     }
 
     #centralizar {
@@ -96,12 +108,20 @@
   <div id="tela_de_titulo" style=center_titulo>
     <h3>JO-KEN-PO</h3>
   </div>
+  <div class="container2">
+    <div id="tela_do_jogo">
+      <B>JO-KEN-PO!</B>
+      <div id="centralizar">
+        <a href="index.html">index.html</a>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <h3>
       <div id="Seleção">
       </div>
       <div id="botao_pedra">
-        <button title="pedra" id="pedra" style=pedra>pedra</button>
+        <button title="pedra" id="pedra" style=pedra class="pedra"></button>
       </div>
       <a>
         <div id="botao_papel">
@@ -109,7 +129,7 @@
         </div>
       </a>
       <div id="botao_tesoura style=tesoura">
-        <button title="tesoura" id="tesoura">tesoura</button>
+        <button title="tesoura" id="tesoura" class="tesoura"></button>
       </div>
   </div>
   </h3>
