@@ -15,7 +15,7 @@
           rock: {
             rock: 'Empate!\n\nmelhor escolha não tem ༼  ͡° ͜ʖ ͡° ༽',
             paper: 'Você perdeu, tente novamente!\n\nrulado ¯\\_(ツ)_/¯',
-            scissors: 'Parabéns, você ganhou!\n\npedra abuser ( ͡° ͜ʖ ͡°)╭∩╮',
+            scissors: 'Parabéns, você ganhou!\n\npedra abuser ( ͡° ͜ʖ ͡°)',
           },
           paper:  {
             rock: 'Parabéns, você ganhou!\nimpossivel, pedra nunca perde\n (╯ ͠° ͟ʖ ͡°)╯┻━┻',
