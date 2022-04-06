@@ -46,27 +46,31 @@
     }
 
     #braza1 {
-      background-color: ;
       width: 6vw;
       height: 6vw;
     }
 
+    #resultado {
+      font-size: 32px;
+      color: white;
+    }
+
     .pedra {
-      background-image: url('rock.png');
+      background-image: url('./rock.png');
       background-size: contain;
       width: 128px;
       height: 128px;
     }
 
     .papel {
-      background-image: url('paper.png');
+      background-image: url('./paper.png');
       background-size: contain;
       width: 128px;
       height: 128px;
     }
 
     .tesoura {
-      background-image: url('tesoura.png');
+      background-image: url('./tesoura.png');
       background-size: contain;
       width: 128px;
       height: 128px;
@@ -93,52 +97,46 @@
 </head>
 
 <body>
-
-  <input type="checkbox" id="check">
-  <label for="check">
-    <img src="">
-  </label>
   <nav>
     <ul>
       <li><a href="">HOME</a></li>
       <li><a href="REGRAS.txt">REGRAS</a></li>
     </ul>
-
   </nav>
-  <div id="tela_de_titulo" style=center_titulo>
+  
+  <div id="tela_de_titulo">
     <h3>JO-KEN-PO</h3>
   </div>
+  
   <div class="container2">
     <div id="tela_do_jogo">
-      <B>JO-KEN-PO!</B>
+      <B id="resultado">JO-KEN-PO!</B>
       <div id="centralizar">
         <a href="index.html">index.html</a>
       </div>
     </div>
   </div>
-  <div class="container">
-    <h3>
-      <div id="Seleção">
-      </div>
+  
+  <div class="container">      
       <div id="botao_pedra">
-        <button title="pedra" id="pedra" style=pedra class="pedra"></button>
+        <button title="pedra" id="pedra" class="pedra">
+        </button>
       </div>
+      
       <a>
         <div id="botao_papel">
-          <button title="papel" id="papel" class="papel"></button>
+          <button title="papel" id="papel" class="papel">
+          </button>
         </div>
       </a>
-      <div id="botao_tesoura style=tesoura">
-        <button title="tesoura" id="tesoura" class="tesoura"></button>
+      
+      <div id="botao_tesoura">
+        <button title="tesoura" id="tesoura" class="tesoura">
+        </button>
       </div>
   </div>
-  </h3>
-  </div>
 
-
-  <script>
-      //alert('JO-KEN-PO')
-  </script>
+  <script src="./scripts.js"></script>
 </body>
 
 </html>
