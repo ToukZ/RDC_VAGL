@@ -13,19 +13,19 @@
         */
         const possibilities = {
           rock: {
-            rock: 'Empate!',
-            paper: 'Você perdeu, tente novamente!',
-            scissors: 'Parabéns, você ganhou!',
+            rock: 'Empate!\n\nmelhor escolha não tem ༼  ͡° ͜ʖ ͡° ༽',
+            paper: 'Você perdeu, tente novamente!\n\nrulado ¯\\_(ツ)_/¯',
+            scissors: 'Parabéns, você ganhou!\n\npedra abuser ( ͡° ͜ʖ ͡°)╭∩╮',
           },
           paper:  {
-            rock: 'Parabéns, você ganhou!',
-            paper: 'Empate!',
-            scissors: 'Você perdeu, tente novamente!'
+            rock: 'Parabéns, você ganhou!\nimpossivel, pedra nunca perde\n (╯ ͠° ͟ʖ ͡°)╯┻━┻',
+            paper: 'Empate!\n\nimagina jogar de papel',
+            scissors: 'Você perdeu, tente novamente!\n\nGit Gud'
           },
           scissors: {
-            rock: 'Você perdeu, tente novamente!',
-            paper: 'Parabéns, você ganhou!',
-            scissors: 'Empate!',
+            rock: 'Você perdeu, tente novamente!\n\nGood old rock, nothing beats that ( ͡~ ͜ʖ ͡°)',
+            paper: 'Parabéns, você ganhou!\n\ndevia ter jogado pedra ( ͡° ʖ̯ ͡°)',
+            scissors: 'Empate!\n\n ( ͡° ͜ʖ ͡°)',
           },
         }
 
@@ -40,9 +40,9 @@
         const computerMove = options[Math.floor(Math.random() * options.length)] // Gera uma opção aleatória como jogada do computador
 
         // Coloca o resultado da combinação jogada-do-jogador & jodada-do-computador no texto do elemento html 
-        resultBox.innerText = getPlayerResultMessage(playerMove, computerMove)
+        resultBox.innerText = getPlayerResultMessage(playerMove, computerMove) + '\nO computador escolheu: '+ computerMove
       }
 
       rockButton.addEventListener('click', () => play('rock')) // Adiciona a função play passando 'rock' como argumento ao botão de pedra
-      paperButton.addEventListener('click', () => play('paper')) // Adiciona a função play passando 'rock' como argumento ao botão de papel
-      scissorsButton.addEventListener('click', () => play('scissors')) // Adiciona a função play passando 'rock' como argumento ao botão de tesoura
+      paperButton.addEventListener('click', () => play('paper')) // Adiciona a função play passando 'paper' como argumento ao botão de papel
+      scissorsButton.addEventListener('click', () => play('scissors')) // Adiciona a função play passando 'scissors' como argumento ao botão de tesoura
