@@ -7,7 +7,7 @@ s.bind(('', 42069)) #abrir o socket localmente com porta 42069
 s.listen(1) #espera receber 1 conexão
 
 while True: #enquanto tiver conexão, vai continuar rodando
-    conn = s.accept() #variável que salva os dados da conexao
+    conn, addr = s.accept() #variável que salva os dados da conexao
     data = conn.recv(2000) #variável que aceita até 2000 bytes dos dados recebidos
     info = data.split(b' ') #variável que separa os dados recebidos por espaços em um vetor
 
