@@ -1,9 +1,9 @@
 Bem-vindos ao Pedra Papel ou Tesoura.
-Clique em um botão referente à escolha que você quer fazer.
-O computador escolherá uma também, e dará o resultado do embate.
+Clique no botao referente a escolha que voce quer fazer.
+O computador escolhera uma tambem, e dara o resultado do embate.
 
 Pedra ganha de Tesoura.
 Tesoura ganha de Papel.
 Papel ganha de Pedra.
 
-Se os dois tiverem a mesma seleção, é um empate. Ninguém ganhou ou perdeu. Apenas tempo. Isso todo mundo perde.
+Se os dois tiverem a mesma selecao, eh um empate. Ninguem ganhou ou perdeu. Apenas tempo. Isso todo mundo perde.
