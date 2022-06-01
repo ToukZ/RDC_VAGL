@@ -4,10 +4,6 @@ from os import system
 from time import sleep
 from pygame import mixer
 
-HOST = '192.168.0.4'  # endereco do servidor
-PORT = 50000  # mesma porta do servidor para garantir a conexao
-
-mixer.init()
 def frase(result,streak):
     victory = streak
     elogios1=['bom','massa','nice','good','doce vitoria']
@@ -23,8 +19,14 @@ def frase(result,streak):
             print(random.choice(elogios3).upper() + '  ' + '5+ ANIQUILACOES SEGUIDAS!')
     else:
         print(random.choice(losing))
+        
+HOST = '192.168.0.4'  # endereco IPV4 da maquina que vai servidor
+PORT = 50000  # mesma porta do servidor para garantir a conexao
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mixer.init()
+
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)#define a familia do protocolo ,Ipv4, e o tipo de protocolo,TCP.
 s.connect((HOST, PORT)) # conecta no servidor na porta referida
 client_selection = 'pedra' # default soh pra nao bugar
 winStreakClient = 0
@@ -33,11 +35,11 @@ soundFile = ['1_streak.mp3', '2_streak.mp3', '3_streak.mp3', '4_streak.mp3', '5_
 while(True):
     system('cls')
     client_selection = input('cliente, digite pedra, papel ou tesoura: ') # input do cliente
-    s.sendall(client_selection.encode()) # envia selecao do cliente
+    s.sendall(client_selection.encode()) # envia selecao(dados) do cliente
     print('Aguardando o Servidor fazer sua selecao')
     server_selection = s.recv(1024)  # recebe a selecao do servidor codificada
-    result = s.recv(1024) # recebe o resultado do embate codificado
-    data = s.recv(1024) # recebe o resultado do embate codificado e formatado
+    result = s.recv(1024) # recebe o resultado do embate codificado em ate 1024 bytes
+    data = s.recv(1024) # recebe o resultado do embate codificado e formatado em ate 1024 bytes
 
     if result.decode() == 'Client':
         mixer.music.load('music/' + soundFile[winStreakClient])
