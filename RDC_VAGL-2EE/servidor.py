@@ -4,10 +4,6 @@ from os import system
 from time import sleep
 from pygame import mixer
 
-HOST = '192.168.0.4' # IPV4 da maquina que ira rodar o servidor
-PORT = 50000 # Porta qualquer (recomendado 5 digitos)
-
-mixer.init()
 def defineWinner(choiceServer,choiceClient): # codigo que define o vencedor do embate
     if choiceServer in ['tesoura', 't', 'T']:
         if choiceClient in ['tesoura', 't', 'T']:
@@ -38,13 +34,13 @@ def defineWinner(choiceServer,choiceClient): # codigo que define o vencedor do e
             return '400 Bad Client Input' # cliente colocou algo que nao eh reconhecido
     else:
         return '400 Bad Server Input' # servidor colocou algo que nao eh reconhecido
-
+    
 def frase(result,streak):
     victory = streak + 1
     elogios1=['bom','massa','nice','good','doce vitoria']
     elogios2=['STONKS','UOU','BRABO','ARREBENTOU']
     elogios3=['OVERSTONKS','PRO INFINITO','DESTRUIU','HACKER','CHEATER','IMPOSSIVEL!!!','0.4115%']
-    losing=['mais sorte da proxima vez','keke','aaaaaa','n foi dessa vez','tente outra vez']
+    losing=['mais sorte da proxima vez','keke','aaaaaa','n foi dessa vez','tente outra vez','NOOT NOOT']
     if result=='Server':
         if streak<=2:
             print(random.choice(elogios1) + '  streak: ' + f'{victory}')
@@ -55,22 +51,26 @@ def frase(result,streak):
     else:
         print(random.choice(losing))
 
+HOST = '192.168.0.4' # IPV4 da maquina que vai rodar o servidor
+PORT = 50000 # Porta qualquer (recomendado 5 digitos)
+
+mixer.init()
 
 # familia ipv4, protocolo tcp
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)#define a familia do protocolo ,Ipv4, e o tipo de protocolo,TCP. 
 s.bind((HOST, PORT))  # vincular host e porta com o socket
-s.listen(2)
+s.listen(2)# coloca o socket no modo de escuta,nesse caso de 2 conexões
 
 print('servidor: aguardando conexão de um cliente')
 conn, ender = s.accept()  # retorna conexao e endereco
-print('Conectado no endereço ', ender)
+print('Conectado no endereço ', ender)# exibe a porta conectada com o cliente
 server_selection = 'pedra' # default soh pra nao bugar
 winStreakServer = 0
 soundFile = ['1_streak.mp3', '2_streak.mp3', '3_streak.mp3', '4_streak.mp3', '5_streak.mp3']
 
 while(True):
     print('Aguardando Cliente fazer sua selecao')
-    data = conn.recv(1024)  # recebe a selecao do cliente
+    data = conn.recv(1024)  # recebe a selecao do cliente,sendo o argumento 1024 o tamanho maximo de dados que pode receber
     client_selection = data.decode() # decodifica ela
     
     if not data:  # quando nao tiver mais dados entra aqui
@@ -92,7 +92,7 @@ while(True):
                 winStreakServer -= 1
         elif result == 'Client':
             winStreakServer = 0
-        conn.sendall(result.encode()) # envia o resultado do embate
+        conn.sendall(result.encode()) # envia o resultado do embate pro cliente
         conn.sendall(str.encode()) # envia o resultado do embate formatado
         input('\n\n Pressione Enter para continuar...')
         system('cls')
